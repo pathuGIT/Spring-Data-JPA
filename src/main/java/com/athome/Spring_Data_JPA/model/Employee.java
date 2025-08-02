@@ -11,10 +11,7 @@ public class Employee {
     private int age;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name = "emp_address",
-            joinColumns = { @JoinColumn( name = "emp_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "addr_id", referencedColumnName = "address_id")}
-    )
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
     private Address address;
 
     public Employee() {
