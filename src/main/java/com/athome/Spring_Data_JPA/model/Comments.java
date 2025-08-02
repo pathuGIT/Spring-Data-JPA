@@ -1,5 +1,6 @@
 package com.athome.Spring_Data_JPA.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,12 +12,14 @@ public class Comments {
 
     @ManyToOne
     @JoinColumn(name = "post_id", referencedColumnName = "id")
+    @JsonIgnore
     private Posts posts;
 
     public Comments() {
     }
 
-    public Comments(String text, Posts posts) {
+    public Comments(int id, String text, Posts posts) {
+        this.id = id;
         this.text = text;
         this.posts = posts;
     }
