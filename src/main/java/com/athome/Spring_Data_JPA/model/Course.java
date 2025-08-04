@@ -8,18 +8,20 @@ import lombok.NoArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+@Entity
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private int credit;
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     @JsonBackReference       // ← prevents serializing back into EmpCourse.course
     private Set<EmpCourse> empCourses = new HashSet<>();
+
 
     public int getId() {
         return id;
@@ -35,6 +37,14 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
     }
 
     public Set<EmpCourse> getEmpCourses() {

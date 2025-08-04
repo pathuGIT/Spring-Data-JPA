@@ -1,9 +1,9 @@
 package com.athome.Spring_Data_JPA.repository;
 
-import com.athome.Spring_Data_JPA.model.Address;
+import com.athome.Spring_Data_JPA.model.EmpCourse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AddressRepository extends JpaRepository<Address, Integer> {
+public interface EmpCourseRepository extends JpaRepository<EmpCourse, Integer> {
 }

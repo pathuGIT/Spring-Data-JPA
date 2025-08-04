@@ -13,8 +13,8 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping
-    public void addEmpToCurrAddress(@RequestParam int id, @RequestBody Employee employee){
-        employeeService.addEmpToCurrAddress(id, employee);
+    public Employee addEmp(@RequestBody Employee employee){
+        return employeeService.addEmp(employee);
     }
 
 }

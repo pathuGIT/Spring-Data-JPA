@@ -1,7 +1,7 @@
 package com.athome.Spring_Data_JPA.controller;
 
-import com.athome.Spring_Data_JPA.model.Address;
-import com.athome.Spring_Data_JPA.service.AddressService;
+import com.athome.Spring_Data_JPA.model.Course;
+import com.athome.Spring_Data_JPA.service.CourseServise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/address")
-public class AddressController {
+@RequestMapping("/course")
+public class CourseController {
     @Autowired
-    private AddressService addressService;
+    private CourseServise courseServise;
 
     @PostMapping
-    public void addAddress(@RequestBody Address address){
-        addressService.addAddress(address);
+    public Course addCourse(@RequestBody Course course){
+        return courseServise.addCourse(course);
     }
 }
