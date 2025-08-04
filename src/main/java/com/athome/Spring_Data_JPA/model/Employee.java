@@ -17,9 +17,10 @@ public class Employee {
     private int id;
     private String name;
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
-    @JsonBackReference       // ← prevents serializing back into EmpCourse.course
-    private Set<EmpCourse> empCourses = new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
+    private Address address;
+
 
     public int getId() {
         return id;

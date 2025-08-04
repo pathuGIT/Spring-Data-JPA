@@ -1,7 +1,5 @@
 # Spring-Data-JPA
 
-Here’s a **Markdown Cheat Sheet** for Spring Data JPA Derived Query Methods — perfect to keep in your repo or notes:
-
 ---
 
 # Spring Data JPA Derived Query Cheat Sheet
@@ -133,6 +131,3 @@ findBy<FieldName><Operator>[And/Or]<FieldName><Operator>...
   → Top 3 oldest employees sorted by name desc
 
 ---
-
-Do you want me to **turn this into a downloadable `.md` file** so you can save it directly?
-Shall I also **add sample queries specific to your Employee & Address tables** (like 10 ready-to-use methods)?
